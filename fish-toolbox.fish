@@ -1,6 +1,4 @@
-if test -f ~/.zshrc
-    bass source ~/.zshrc
-else if test -f ~/.bashrc
+if test -f ~/.bashrc
     bass source ~/.bashrc
 end
 
