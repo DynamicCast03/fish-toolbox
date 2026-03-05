@@ -1,5 +1,3 @@
-export TERM=xterm-256color
-
 if test -f ~/.bashrc
     bass source ~/.bashrc
 end
