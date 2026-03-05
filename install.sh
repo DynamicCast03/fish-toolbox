@@ -17,6 +17,9 @@ else
     git clone "$repo_url" "$target_dir"
 fi
 
+echo "[fish-toolbox] installing fisher and bass..."
+fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher install edc/bass'
+
 echo "[fish-toolbox] ensuring fish config exists..."
 mkdir -p "$(dirname "$config_file")"
 touch "$config_file"
@@ -32,8 +35,5 @@ else
     fi
     echo "[fish-toolbox] source line appended to $config_file"
 fi
-
-echo "[fish-toolbox] installing fisher and bass..."
-fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher install edc/bass'
 
 echo "[fish-toolbox] done."
