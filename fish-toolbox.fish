@@ -1,3 +1,5 @@
+export TERM=xterm-256color
+
 if test -f ~/.bashrc
     bass source ~/.bashrc
 end
@@ -24,4 +26,3 @@ function fish_prompt --description 'Informative prompt'
                 $USER (prompt_hostname) (set_color $fish_color_cwd) (string replace -r '^'"$HOME" '~' $PWD) $pipestatus_string \
                 (set_color normal)
 end
-export TERM=xterm-256color
