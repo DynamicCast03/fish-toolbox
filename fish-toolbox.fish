@@ -83,6 +83,10 @@ function fish_prompt --description 'Informative prompt'
 end
 
 if status is-interactive
+    set -l fish_toolbox_dir (dirname (status --current-filename))
+    command git -C "$fish_toolbox_dir" pull --ff-only </dev/null >/dev/null 2>&1 &
+    disown
+
     function fish_toolbox_notify_started --on-event fish_preexec
         set -g fish_toolbox_last_cmd $argv[1]
     end
